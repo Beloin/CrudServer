@@ -13,12 +13,12 @@ public class StopTokenHandler extends AbstractTokenHandler {
     }
 
     @Override
-    public TokenType handle(String token) throws DomainException {
+    public TokenType handle(String token, HandlerContext ctx) throws DomainException {
         if (token.length() == 1 && StopTokensUtils.isStopToken(token.charAt(0))) {
             return TokenType.STOPTOKEN;
         }
 
-        return this.successor(token);
+        return this.successor(token, ctx);
     }
 
 }

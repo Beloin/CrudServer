@@ -19,8 +19,10 @@ public class Main {
         CrudLexer lexer = new CrudLexer(tokenParser);
 
         List<String> arr = new ArrayList<>(10);
+        arr.add("auth.roles ADMIN; USER");
         arr.add("resource user mappedby user, name, birthdate, photo");
         arr.add("dto user mappedby user, name, password, birthdate");
+        arr.add("model user, string name 255, string password lenght:255, date birthdate, media.url photo, role role");
         lexer.lex(arr);
 
         for (List<CrudToken> tokenArray : lexer.getTokensPerLine()) {
@@ -33,7 +35,6 @@ public class Main {
 
     private static TokenParserHandler generateHandlers() {
         // MODEL -> RESOURCE -> STOPTOKEN -> CONFIGURATION -> ENDPOINT -> DTO -> MAPPEDBY -> LITERAL
-
         TokenParserHandler modelHandler = new ModelTokenHandler();
         TokenParserHandler resourceHandler = new ResourceTokenHandler();
         TokenParserHandler stopTokenHandler = new StopTokenHandler();

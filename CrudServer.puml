@@ -1,0 +1,10 @@
+@startuml CrudServer
+
+[*] --> Lexer
+
+Lexer --> Parser
+
+
+
+
+@enduml

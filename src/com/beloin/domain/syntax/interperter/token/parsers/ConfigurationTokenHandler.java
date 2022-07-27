@@ -5,19 +5,24 @@ import com.beloin.domain.syntax.interperter.token.TokenType;
 
 public class ConfigurationTokenHandler extends AbstractTokenHandler {
 
-    public ConfigurationTokenHandler(TokenParserHandler successor) {
-        super(successor);
-    }
-
-    public ConfigurationTokenHandler() {
-    }
-
     @Override
-    public TokenType handle(String token) throws DomainException {
-        if (token.matches("\\.")) {
+    public TokenType handle(String token, HandlerContext ctx) throws DomainException {
+        if (isConfigurationToken(token, ctx)) {
             return TokenType.CONFIGURATION;
         }
+        return this.successor(token, ctx);
+    }
 
-        return this.successor(token);
+    private boolean isConfigurationToken(String token, HandlerContext ctx){
+        if (ctx.getCurrentPosition() > 0) return false;
+
+        for (int i = 0; i< token.length(); i++) {
+            char c = token.charAt(i);
+            if (c == '.') {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

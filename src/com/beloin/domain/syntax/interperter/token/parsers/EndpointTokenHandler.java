@@ -6,20 +6,14 @@ import com.beloin.domain.syntax.interperter.token.TokenType;
 import java.util.Objects;
 
 public class EndpointTokenHandler extends AbstractTokenHandler {
-    public EndpointTokenHandler(TokenParserHandler successor) {
-        super(successor);
-    }
-
-    public EndpointTokenHandler() {
-    }
 
     @Override
-    public TokenType handle(String token) throws DomainException {
+    public TokenType handle(String token, HandlerContext ctx) throws DomainException {
         if (matchEndpoint(token)) {
             return TokenType.ENDPOINT;
         }
 
-        return this.successor(token);
+        return this.successor(token, ctx);
     }
 
     private final String[] methods = {"POST", "GET", "PUT", "PATCH", "DELETE"};

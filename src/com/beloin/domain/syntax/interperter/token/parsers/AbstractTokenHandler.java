@@ -13,12 +13,12 @@ public abstract class AbstractTokenHandler implements TokenParserHandler {
     public AbstractTokenHandler() {
     }
 
-    abstract public TokenType handle(String token) throws DomainException;
+    abstract public TokenType handle(String token, HandlerContext ctx) throws DomainException;
 
     @Override
-    public TokenType successor(String token) throws DomainException {
+    public TokenType successor(String token, HandlerContext ctx) throws DomainException {
         if (successor != null) {
-            return successor.handle(token);
+            return successor.handle(token, ctx);
         }
 
         // THIS EXCEPTION SHOULD NEVER TROW;

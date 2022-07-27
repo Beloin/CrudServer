@@ -10,7 +10,7 @@ public class LiteralTokenHandler extends AbstractTokenHandler{
     }
 
     @Override
-    public TokenType handle(String token) throws DomainException {
+    public TokenType handle(String token, HandlerContext ctx) throws DomainException {
         return TokenType.LITERAL;
     }
 }

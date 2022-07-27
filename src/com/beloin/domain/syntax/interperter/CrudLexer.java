@@ -35,10 +35,7 @@ public class CrudLexer {
             if (StopTokensUtils.isStopToken(currentChar)) {
                 String token = tokenBuilder.toString();
 
-                // Creates regular Token
-                // What if has two stoptokens?
                 // If is not stop token:
-
                 if (token.length() >= 1) {
                     if (!StopTokensUtils.isStopToken(token.charAt(0))) {
                         CrudToken crudToken = createCrudToken(token, startAt);
@@ -51,7 +48,6 @@ public class CrudLexer {
 
                 tokenBuilder = new StringBuilder();
                 startAt = j + 1;
-
                 continue;
             }
 
@@ -68,7 +64,7 @@ public class CrudLexer {
     }
 
     private CrudToken createCrudToken(String token, int position) throws DomainException {
-        TokenType type = tokenParser.parse(token);
+        TokenType type = tokenParser.parse(token, position);
         return new CrudToken(type, token, position);
     }
 

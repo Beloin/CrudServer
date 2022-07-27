@@ -4,19 +4,12 @@ import com.beloin.domain.exceptions.DomainException;
 import com.beloin.domain.syntax.interperter.token.TokenType;
 
 public class DTOTokenHandler extends AbstractTokenHandler {
-    public DTOTokenHandler(TokenParserHandler successor) {
-        super(successor);
-    }
-
-    public DTOTokenHandler() {
-    }
-
     @Override
-    public TokenType handle(String token) throws DomainException {
+    public TokenType handle(String token, HandlerContext ctx) throws DomainException {
         if (token.matches("dto")) {
             return TokenType.DTO;
         }
 
-        return this.successor(token);
+        return this.successor(token, ctx);
     }
 }
