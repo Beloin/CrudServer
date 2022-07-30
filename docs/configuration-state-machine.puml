@@ -1,0 +1,13 @@
+@startuml Configuration State Machine
+
+[*] --> Nome : ConfigurationToken
+
+Nome --> Valor : LiteralToken
+
+Valor --> IdentificadorLista : ArrayToken
+
+IdentificadorLista --> Valor : LiteralToken
+
+Valor -> [*]
+
+@enduml

@@ -1,7 +1,7 @@
-package com.beloin.domain.syntax.interperter.token.parsers;
+package com.beloin.domain.syntax.interperter.tokenIdentifier.handlers;
 
 import com.beloin.domain.exceptions.DomainException;
-import com.beloin.domain.syntax.interperter.token.TokenType;
+import com.beloin.domain.syntax.interperter.TokenType;
 
 import java.util.Objects;
 

@@ -1,9 +1,7 @@
 package com.beloin.domain.syntax.interperter;
 
 import com.beloin.domain.exceptions.DomainException;
-import com.beloin.domain.syntax.interperter.token.CrudToken;
-import com.beloin.domain.syntax.interperter.token.TokenParser;
-import com.beloin.domain.syntax.interperter.token.TokenType;
+import com.beloin.domain.syntax.interperter.tokenIdentifier.TokenIdentifier;
 import com.beloin.domain.syntax.utils.StopTokensUtils;
 
 import java.util.ArrayList;
@@ -11,14 +9,16 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class CrudLexer {
-    public CrudLexer(TokenParser parser) {
+    public CrudLexer(TokenIdentifier parser, List<String> lines) {
         this.tokenParser = parser;
+        this.lines = lines;
     }
 
-    private final TokenParser tokenParser;
+    private final TokenIdentifier tokenParser;
+    private final List<String> lines;
     private List<List<CrudToken>> tokensPerLine;
 
-    public void lex(List<String> lines) throws DomainException {
+    public void lex() throws DomainException {
         tokensPerLine = new ArrayList<>(lines.size());
         for (String currentLine : lines) {
             readLine(currentLine);

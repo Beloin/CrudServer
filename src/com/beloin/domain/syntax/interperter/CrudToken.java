@@ -1,4 +1,4 @@
-package com.beloin.domain.syntax.interperter.token;
+package com.beloin.domain.syntax.interperter;
 
 public record CrudToken(TokenType type, String text, int startPos) {
 

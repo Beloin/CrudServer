@@ -1,4 +1,4 @@
-package com.beloin.domain.syntax.interperter.token.parsers;
+package com.beloin.domain.syntax.interperter.tokenIdentifier.handlers;
 
 public class HandlerContext {
     private int currentPosition;

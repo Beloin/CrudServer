@@ -1,12 +1,12 @@
-package com.beloin.domain.syntax.interperter.token.parsers;
+package com.beloin.domain.syntax.interperter.tokenIdentifier.handlers;
 
 import com.beloin.domain.exceptions.DomainException;
-import com.beloin.domain.syntax.interperter.token.TokenType;
+import com.beloin.domain.syntax.interperter.TokenType;
 
-public abstract class AbstractTokenHandler implements TokenParserHandler {
-    protected TokenParserHandler successor;
+public abstract class AbstractTokenHandler implements TokenIdentifierHandler {
+    protected TokenIdentifierHandler successor;
 
-    public AbstractTokenHandler(TokenParserHandler successor) {
+    public AbstractTokenHandler(TokenIdentifierHandler successor) {
         this.successor = successor;
     }
 
@@ -25,7 +25,7 @@ public abstract class AbstractTokenHandler implements TokenParserHandler {
         throw new DomainException("Token Not Found.");
     }
 
-    public void setSuccessor(TokenParserHandler successor) {
+    public void setSuccessor(TokenIdentifierHandler successor) {
         this.successor = successor;
     }
 

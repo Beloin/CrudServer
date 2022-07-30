@@ -1,0 +1,29 @@
+@startuml Configuration State Machine
+
+' left to right direction
+
+[*] --> ModelStart : ModelToken
+
+ModelStart --> ModelName : LiteralToken
+
+ModelName --> SeparadorModelo : StopToken, na presença de ","
+
+SeparadorModelo --> TipoPropriedade : LiteralToken
+TipoPropriedade --> NomePropriedade : LiteralToken
+
+NomePropriedade --> Opção : LiteralToken
+
+Opção --> RepresentadorDeValor : ValuableToken
+RepresentadorDeValor --> ValorOpção : LiteralToken
+
+Opção --> Opção : LiteralToken
+ValorOpção --> Opção : LiteralToken
+
+ValorOpção --> SeparadorModelo : StopToken, na presença de ","
+Opção --> SeparadorModelo : StopToken, na presença de ","
+
+ValorOpção --> [*]
+Opção --> [*]
+
+
+@enduml
