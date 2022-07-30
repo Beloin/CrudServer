@@ -1,0 +1,16 @@
+@startuml Endpoint State Machine
+
+[*] --> EndpointStart : EndpointToken
+
+EndpointStart --> EndpointPath : LiteralToken
+
+EndpointPath --> EndpointConfiguration : StopToken, na presença de ","
+
+EndpointConfiguration --> Configuração : LiteralToken
+Configuração --> ValorConfiguração : LiteralToken
+
+ValorConfiguração --> EndpointConfiguration : StopToken, na presença de ","
+
+ValorConfiguração --> [*]
+
+@enduml

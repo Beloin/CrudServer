@@ -1,0 +1,21 @@
+@startuml DTO State Machine
+
+' left to right direction
+
+[*] --> DTOStart : DTOToken
+
+DTOStart --> DTOName : LiteralToken
+
+DTOName --> MappedBy : MappedbyToken
+
+MappedBy --> ModelIdentification : LiteralToken, Contanto que exista\num modelo com esse nome
+
+ModelIdentification -> ItemIteration : StopToken, na presença de ","
+
+ItemIteration --> Propriedade : LiteralToken, Contanto que exista\nno modelo escolhido\nessa propriedade
+
+Propriedade --> ItemIteration : StopToken, na presença de ","
+
+Propriedade -> [*]
+
+@enduml
