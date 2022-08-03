@@ -1,4 +1,4 @@
-@startuml Configuration State Machine
+@startuml Resource State Machine
 
 ' left to right direction
 

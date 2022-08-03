@@ -1,4 +1,4 @@
-package com.beloin.domain.syntax.interperter.tokenIdentifier.handlers;
+package com.beloin.domain.syntax.interperter.lexer.tokenIdentifier.handlers;
 
 import com.beloin.domain.exceptions.DomainException;
 import com.beloin.domain.syntax.interperter.TokenType;

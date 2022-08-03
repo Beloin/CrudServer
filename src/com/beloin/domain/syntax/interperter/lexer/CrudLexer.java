@@ -1,7 +1,9 @@
-package com.beloin.domain.syntax.interperter;
+package com.beloin.domain.syntax.interperter.lexer;
 
 import com.beloin.domain.exceptions.DomainException;
-import com.beloin.domain.syntax.interperter.tokenIdentifier.TokenIdentifier;
+import com.beloin.domain.syntax.interperter.CrudToken;
+import com.beloin.domain.syntax.interperter.TokenType;
+import com.beloin.domain.syntax.interperter.lexer.tokenIdentifier.TokenIdentifier;
 import com.beloin.domain.syntax.utils.StopTokensUtils;
 
 import java.util.ArrayList;

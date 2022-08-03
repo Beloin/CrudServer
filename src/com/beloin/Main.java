@@ -1,10 +1,10 @@
 package com.beloin;
 
 import com.beloin.domain.exceptions.DomainException;
-import com.beloin.domain.syntax.interperter.CrudLexer;
+import com.beloin.domain.syntax.interperter.lexer.CrudLexer;
 import com.beloin.domain.syntax.interperter.CrudToken;
-import com.beloin.domain.syntax.interperter.tokenIdentifier.TokenIdentifier;
-import com.beloin.domain.syntax.interperter.tokenIdentifier.handlers.*;
+import com.beloin.domain.syntax.interperter.lexer.tokenIdentifier.TokenIdentifier;
+import com.beloin.domain.syntax.interperter.lexer.tokenIdentifier.handlers.*;
 
 import java.util.ArrayList;
 import java.util.List;

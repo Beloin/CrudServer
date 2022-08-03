@@ -1,9 +1,9 @@
-package com.beloin.domain.syntax.interperter.tokenIdentifier;
+package com.beloin.domain.syntax.interperter.lexer.tokenIdentifier;
 
 import com.beloin.domain.exceptions.DomainException;
 import com.beloin.domain.syntax.interperter.TokenType;
-import com.beloin.domain.syntax.interperter.tokenIdentifier.handlers.HandlerContext;
-import com.beloin.domain.syntax.interperter.tokenIdentifier.handlers.TokenIdentifierHandler;
+import com.beloin.domain.syntax.interperter.lexer.tokenIdentifier.handlers.HandlerContext;
+import com.beloin.domain.syntax.interperter.lexer.tokenIdentifier.handlers.TokenIdentifierHandler;
 
 // TODO: CHAIN OF RESPONSIBILITY
 public class TokenIdentifier {
