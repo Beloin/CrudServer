@@ -6,27 +6,22 @@ import java.util.Objects;
 
 // ClassIndex.getAnnotated(com.test.YourCustomAnnotation.class)
 public abstract class State {
-
     public State() {
         this.name = this.getClass().getName();
     }
-
     public State(String name) {
         this.name = name;
         this.isFinalState = false;
     }
-
     public State(boolean isFinalState) {
         this.isFinalState = isFinalState;
         this.name = this.getClass().getName();
     }
-
     public State(String name, boolean isFinalState) {
         this.name = name;
         this.isFinalState = isFinalState;
     }
-
-    private String name;
+    private final String name;
     protected boolean isFinalState;
 
     public State addEvent(CrudToken event) {
