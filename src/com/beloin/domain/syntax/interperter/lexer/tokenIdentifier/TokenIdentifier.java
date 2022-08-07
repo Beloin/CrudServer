@@ -5,7 +5,6 @@ import com.beloin.domain.syntax.interperter.TokenType;
 import com.beloin.domain.syntax.interperter.lexer.tokenIdentifier.handlers.HandlerContext;
 import com.beloin.domain.syntax.interperter.lexer.tokenIdentifier.handlers.TokenIdentifierHandler;
 
-// TODO: CHAIN OF RESPONSIBILITY
 public class TokenIdentifier {
     private final TokenIdentifierHandler mainHandler;
 
